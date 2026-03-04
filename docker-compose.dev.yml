@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: postgres
+    mem_limit: 1G
+    ports:
+      - 5300:5432
+    volumes:
+      - postgres18:/var/lib/postgresql
+      - ./init-databases.sql:/docker-entrypoint-initdb.d/init-databases.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  postgres18:
