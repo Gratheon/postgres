@@ -13,4 +13,4 @@ just start
 
 - Service hostname (Docker network): `postgres:5432`
 - Local host access: `postgresql://test:test@0.0.0.0:5300/postgres`
-- Initialized databases: `user-cycle`, `swarm-api`, `image-splitter`, `logs`, `telemetry-api`, `grafana`
+- Initialized databases: `user-cycle`, `swarm-api`, `image-splitter`, `alerts`, `logs`, `telemetry-api`, `grafana`
